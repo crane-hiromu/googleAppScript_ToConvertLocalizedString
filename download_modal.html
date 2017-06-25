@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <div align="center">
+     <?
+     if (linkForIosOfEnglish) {
+       output.append("<a href='" +  linkForIosOfEnglish + "' target='_blank'>ios localized.strings(en)</a><br>");
+     }
+     ?>
+     <?
+     if (linkForIosOfJapanese) {
+       output.append("<a href='" +  linkForIosOfJapanese + "' target='_blank'>ios localized.strings(ja)</a><br>");
+     }
+     ?>
+     <?
+     if (linkForAndroidOfEnglish) {
+       output.append("<a href='" +  linkForAndroidOfEnglish + "' target='_blank'>android strings.xml(en)</a><br>");
+     }
+     ?>
+     <?
+     if (linkForAndroidOfJapanese) {
+       output.append("<a href='" +  linkForAndroidOfJapanese + "' target='_blank'>android strings.xml(ja)</a><br>");
+     }
+     ?>
+     </div>
+  </body>
+</html>
