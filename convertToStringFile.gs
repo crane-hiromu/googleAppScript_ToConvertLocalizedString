@@ -57,35 +57,35 @@ var LOCALIZED_STRINGS = LOCALIZED_STRINGS || {};
 LOCALIZED_STRINGS = {
 
   init: function() {
-    this.cotrollers = this.CONTROLLERS;
-    this.cotrollers.init();
+    this.controllers = this.CONTROLLERS;
+    this.controllers.init();
 
-    this.common = this.cotrollers.COMMON;
+    this.common = this.controllers.COMMON;
   },
 
   generate: function() {
-    this.cotrollers.setLocalizedParameters();
-    this.cotrollers.setUpLocalizedStringsSheets();
-    this.cotrollers.writeLocalizedStringsSheets();
+    this.controllers.setLocalizedParameters();
+    this.controllers.setUpLocalizedStringsSheets();
+    this.controllers.writeLocalizedStringsSheets();
   },
 
   remove: function() {
-    this.cotrollers.deleteStringsSheet(this.common.getStringsSheetName(RESOURCES.FILE_NAME.IOS, RESOURCES.LANGUAGES.EN));
-    this.cotrollers.deleteStringsSheet(this.common.getStringsSheetName(RESOURCES.FILE_NAME.IOS, RESOURCES.LANGUAGES.JA));
-    this.cotrollers.deleteStringsSheet(this.common.getStringsSheetName(RESOURCES.FILE_NAME.ANDROID, RESOURCES.LANGUAGES.EN));
-    this.cotrollers.deleteStringsSheet(this.common.getStringsSheetName(RESOURCES.FILE_NAME.ANDROID, RESOURCES.LANGUAGES.JA));
+    this.controllers.deleteStringsSheet(this.common.getStringsSheetName(RESOURCES.FILE_NAME.IOS, RESOURCES.LANGUAGES.EN));
+    this.controllers.deleteStringsSheet(this.common.getStringsSheetName(RESOURCES.FILE_NAME.IOS, RESOURCES.LANGUAGES.JA));
+    this.controllers.deleteStringsSheet(this.common.getStringsSheetName(RESOURCES.FILE_NAME.ANDROID, RESOURCES.LANGUAGES.EN));
+    this.controllers.deleteStringsSheet(this.common.getStringsSheetName(RESOURCES.FILE_NAME.ANDROID, RESOURCES.LANGUAGES.JA));
   },
 
   downloadForIos: function() {
-    const linkOfEnglish = this.cotrollers.getDownloadLink(this.common.getStringsSheetName(RESOURCES.FILE_NAME.IOS, RESOURCES.LANGUAGES.EN));
-    const linkOfJapanese  = this.cotrollers.getDownloadLink(this.common.getStringsSheetName(RESOURCES.FILE_NAME.IOS, RESOURCES.LANGUAGES.JA));
-    this.cotrollers.setDownloadLink(linkOfEnglish, linkOfJapanese, false, false, linkOfEnglish, RESOURCES.DIALOG_MESSAGE.IOS);
+    const linkOfEnglish = this.controllers.getDownloadLink(this.common.getStringsSheetName(RESOURCES.FILE_NAME.IOS, RESOURCES.LANGUAGES.EN));
+    const linkOfJapanese  = this.controllers.getDownloadLink(this.common.getStringsSheetName(RESOURCES.FILE_NAME.IOS, RESOURCES.LANGUAGES.JA));
+    this.controllers.setDownloadLink(linkOfEnglish, linkOfJapanese, false, false, linkOfEnglish, RESOURCES.DIALOG_MESSAGE.IOS);
   },
 
   downloadForAndroid: function() {
-    const linkOfEnglish = this.cotrollers.getDownloadLink(this.common.getStringsSheetName(RESOURCES.FILE_NAME.ANDROID, RESOURCES.LANGUAGES.EN));
-    const linkOfJapanese  = this.cotrollers.getDownloadLink(this.common.getStringsSheetName(RESOURCES.FILE_NAME.ANDROID, RESOURCES.LANGUAGES.JA));
-    this.cotrollers.setDownloadLink(false, false, linkOfEnglish, linkOfJapanese, linkOfEnglish, RESOURCES.DIALOG_MESSAGE.ANDROID);
+    const linkOfEnglish = this.controllers.getDownloadLink(this.common.getStringsSheetName(RESOURCES.FILE_NAME.ANDROID, RESOURCES.LANGUAGES.EN));
+    const linkOfJapanese  = this.controllers.getDownloadLink(this.common.getStringsSheetName(RESOURCES.FILE_NAME.ANDROID, RESOURCES.LANGUAGES.JA));
+    this.controllers.setDownloadLink(false, false, linkOfEnglish, linkOfJapanese, linkOfEnglish, RESOURCES.DIALOG_MESSAGE.ANDROID);
   },
 
 };
