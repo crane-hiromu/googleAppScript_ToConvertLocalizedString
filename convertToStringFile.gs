@@ -292,11 +292,7 @@ LOCALIZED_STRINGS.CONTROLLERS.GENERATE = {
     for (i in textArray) {
       sheet.appendRow(textArray[i]);
     }
-  },
-
-  getSubstr: function(str) {
-    return str.substr(2).substr(0, str.length-4); //　最初と最後の括弧、4文字分を引いている。
-  },
+  }
 
 }
 
@@ -311,14 +307,10 @@ LOCALIZED_STRINGS.CONTROLLERS.DOWNLOAD = {
   convertSheet: function(data){
     const rowlength = data.length;
     const columnlength = data[0].length;
-    var convertedData = "";
 
+    var convertedData = "";
     for(var i = 0; i < rowlength; i++){
-      if(i < rowlength-1) {
-        convertedData += data[i].join(",") + "\r\n";
-      }else{
-        convertedData += data[i];
-      }
+      convertedData = (i < rowlength-1) ? convertedData+data[i].join(',')+'\r\n' : convertedData+data[i];
     }
     return convertedData;
   },
